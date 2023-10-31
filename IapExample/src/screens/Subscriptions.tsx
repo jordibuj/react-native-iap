@@ -89,7 +89,7 @@ export const Subscriptions = () => {
   return (
     <ScrollView contentContainerStyle={contentContainerStyle}>
       <State connected={connected} storekit2={isIosStorekit2()} />
-
+      { console.log('AAA - Subscriptions', { connected, isIosStorekit2: isIosStorekit2() })}
       <Box>
         <View style={styles.container}>
           <Heading copy="Subscriptions" />
