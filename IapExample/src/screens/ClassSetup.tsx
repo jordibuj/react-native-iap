@@ -62,6 +62,7 @@ export class ClassSetup extends Component<{}, State> {
   async componentDidMount() {
     try {
       await initConnection();
+      console.log('AAA - initConnection ok');
 
       if (isAndroid) {
         await flushFailedPurchasesCachedAsPendingAndroid();
@@ -76,6 +77,7 @@ export class ClassSetup extends Component<{}, State> {
          * every launch for pending purchases
          */
         await clearTransactionIOS();
+        console.log('AAA - clearTransactionIOS ok');
       }
     } catch (error) {
       if (error instanceof PurchaseError) {
@@ -128,7 +130,7 @@ export class ClassSetup extends Component<{}, State> {
   getItems = async () => {
     try {
       const products = await getProducts({skus: constants.productSkus});
-
+      console.log('AAA - getProducts', products);
       this.setState({productList: products});
     } catch (error) {
       errorLog({message: 'getItems', error});

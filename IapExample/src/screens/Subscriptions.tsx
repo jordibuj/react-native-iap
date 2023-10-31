@@ -38,6 +38,7 @@ export const Subscriptions = () => {
     productId: string,
     offerToken?: string,
   ) => {
+    console.log('AAA - handleBuySubscription', { productId, offerToken });
     if (isPlay && !offerToken) {
       console.warn(
         `There are no subscription Offers for selected product (Only requiered for Google Play purchases): ${productId}`,
